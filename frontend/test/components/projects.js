@@ -13,9 +13,12 @@ const {
   withRouter
 } = create;
 
-test('renders <Projects> without exploding', (t) => {
+test.only('renders <Projects> without exploding', (t) => {
   const Projects = require('@containers/projects').WrappedComponent;
-  const wrapper = render(withIntl(<Projects />));
+  const wrapper = render(withRouter(withIntl(
+    <Projects />
+  )));
+
   t.deepEqual(wrapper.length, 1);
 });
 

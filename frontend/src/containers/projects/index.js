@@ -29,6 +29,7 @@ const {
 
 const Projects = ({
   org = {},
+  pathname = '',
   projects = []
 }) => {
   const empty = projects.length ? null : (
@@ -43,14 +44,20 @@ const Projects = ({
     </li>
   ));
 
+  const create = (props) => (
+    <Button {...props}>
+      <FormattedMessage id='create-new' />
+    </Button>
+  );
+
   return (
     <div>
       {empty}
       <Row>
         <Column xs={12}>
-          <Button>
-            <FormattedMessage id='create-new' />
-          </Button>
+          <Link to={`${pathname}/~create`}>
+            {create}
+          </Link>
         </Column>
       </Row>
       <Row>
@@ -64,6 +71,7 @@ const Projects = ({
 
 Projects.propTypes = {
   org: PropTypes.org,
+  pathname: React.PropTypes.string,
   projects: React.PropTypes.arrayOf(PropTypes.project)
 };
 

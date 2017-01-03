@@ -1,8 +1,13 @@
 const Redux = require('redux');
+const ReduxForm = require('redux-form');
 
 const {
   combineReducers
 } = Redux;
+
+const {
+  reducer: formReducer
+} = ReduxForm;
 
 module.exports = () => {
   return combineReducers({
@@ -11,6 +16,7 @@ module.exports = () => {
     intl: require('@state/reducers/intl'),
     orgs: require('@state/reducers/orgs'),
     projects: require('@state/reducers/projects'),
-    services: require('@state/reducers/services')
+    services: require('@state/reducers/services'),
+    reduxForm: formReducer
   });
 };
