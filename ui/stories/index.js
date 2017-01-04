@@ -304,3 +304,12 @@ storiesOf('Widget', module)
       <p>Some text</p>
     </Widget>
   ));
+
+const ListItem = require('../src/components/list/item');
+
+storiesOf('ListItem', module)
+  .add('default', () => (
+    <ListItem collapsed>
+      <span>dsad</span>
+    </ListItem>
+  ));
