@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {"id": "Nginx"},
+    {"id": "Wordpress"},
+    {"id": "Memcached"},
+    {"id": "Percona"},
+    {"id": "NFS"}
+  ],
+  "links": [
+    {"source": "Nginx", "target": "Wordpress", "value": 1},
+    {"source": "Wordpress", "target": "Memcached", "value": 8},
+    {"source": "Wordpress", "target": "NFS", "value": 8},
+    {"source": "Wordpress", "target": "Percona", "value": 8}
+  ]
+}

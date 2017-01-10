@@ -6,13 +6,12 @@ const {
 } = require('@kadira/storybook');
 
 const {
+  Avatar,
   Base,
   Button,
-  Container,
   Checkbox,
-  Row,
   Column,
-  Avatar,
+  Container,
   Input,
   List: {
     ListItem,
@@ -24,20 +23,22 @@ const {
     ListItemOutlet,
     ListItemOptions,
   },
+  Row,
   MiniMetric,
   Modal,
   Notificaton,
   Pagination,
+  Radio,
+  RadioGroup,
   RangeSlider,
   Select,
   SelectCustom,
-  Tabs,
   Tab,
+  Tabs,
   Toggle,
   Tooltip,
+  Topology,
   Widget,
-  Radio,
-  RadioGroup
 } = require('../src/');
 
 
@@ -523,3 +524,14 @@ storiesOf('ListItem', module)
       </ListItem>
     </Base>
   ));
+
+const services = require('./services.json');
+storiesOf('Topology', module)
+  .add('5 services', () => (
+    <Topology
+      graph={services}
+      height='500'
+      width='500'
+    />
+  ));
+
